@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use App\Table;
+use App\Movie;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,3 +46,21 @@ Route::delete('usuarios/{id}', function($id) {
 
   return Contact::all();
 });
+
+
+
+
+
+Route::get('movies', function() {
+  // If the Content-Type and Accept headers are set to 'application/json',
+  // this will return a JSON structure. This will be cleaned up later.
+  return Table::all();
+});
+
+Route::get('movies/{id}', function($id) {
+  return Table::all()->where("id",$id);
+});
+
+
+
+
